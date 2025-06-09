@@ -394,3 +394,88 @@ function countStatus(cardsArr, status) {
   transform: translateY(-40px) scale(0.96);
 }
 </style>
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.6rem !important;
+    max-width: 95vw;
+    text-align: center !important;
+    margin-bottom: 13px !important;
+    margin-top: 6vw !important;
+  }
+  h2 {
+    font-size: 1.13rem !important;
+    max-width: 97vw;
+    text-align: center !important;
+    margin-bottom: 13px !important;
+    margin-top: 7vw !important;
+    line-height: 1.23;
+  }
+  .need-revisit-btn {
+    padding: 5px 11px 5px 8px !important;
+    font-size: 0.97rem !important;
+    border-radius: 7px !important;
+    margin-right: 4px !important;
+  }
+  .need-revisit-badge {
+    padding: 0 5px !important;
+    font-size: 0.92rem !important;
+    border-radius: 7px !important;
+    min-width: 1.2em !important;
+    top: -1px !important;
+  }
+  .topic-card {
+    width: 96vw !important;
+    max-width: 390px !important;
+    min-width: 0 !important;
+    margin: 13px auto !important;
+    padding: 22px 8px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 5px rgba(60,30,90,.08) !important;
+    font-size: 1.01rem !important;
+  }
+  .topic-card .stat-bar,
+  .topic-card span,
+  .topic-card div {
+    flex-wrap: wrap !important;
+    font-size: 1.1rem !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+  .topic-card > div {
+    margin-top: 5px !important;
+    margin-bottom: 2px !important;
+  }
+  .fade-card-enter-from,
+  .fade-card-leave-to,
+  .fade-slide-enter-from,
+  .fade-slide-leave-to {
+    transform: none !important;
+  }
+  /* Reduce vertical spacing on sections, headings, card containers, and buttons */
+  [style*="margin-top: 36px"] {
+    margin-top: 5vw !important;
+  }
+  [style*="margin-bottom: 22px"] {
+    margin-bottom: 10px !important;
+  }
+  [style*="margin-top: 20px"] {
+    margin-top: 12px !important;
+  }
+  [style*="margin: 32px;"] {
+    margin: 18px !important;
+  }
+  [style*="margin: 12px;"] {
+    margin: 6px !important;
+  }
+  /* Container padding */
+  body, #app, .container, .main, .App, .app-main, .app-container, div[style*="text-align: center"] {
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
+    box-sizing: border-box !important;
+  }
+  /* Button rows wrap and gap */
+  div[style*="display: flex"][style*="gap: 28px"], .card-status-controls {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+}

@@ -120,16 +120,16 @@ watch(flipped, () => loadStatus())
   background: white;
   transition: border-color 0.25s;
   position: relative;
-  height: 380px;
-  /* Fixed height for consistent bottom bar anchoring; adjust as needed */
+  height: auto;
+  min-height: 210px;
+  max-height: 390px;
   box-sizing: border-box;
 }
 .flashcard-main-content {
   flex: 1 1 auto;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  min-height: 0;
 }
 .flashcard-inner {
   width: 100%;
@@ -141,13 +141,14 @@ watch(flipped, () => loadStatus())
   flex-direction: column;
   align-items: stretch;
   flex: 1 1 auto;
+  min-height: 0;
 }
 .flashcard-inner.flipped {
   transform: rotateY(180deg);
 }
 .flashcard-front,
 .flashcard-back {
-  min-height: unset;
+  min-height: 0;
   box-sizing: border-box;
   border-radius: 16px;
   display: flex;
@@ -165,6 +166,7 @@ watch(flipped, () => loadStatus())
   padding: 0;
   background: #f5f5fa;
   position: relative;
+  flex: 1 1 auto;
 }
 .flashcard-front {
 }
@@ -175,9 +177,14 @@ watch(flipped, () => loadStatus())
 .flashcard-content {
   padding: 20px 20px 18px 20px;
   flex: 1 1 auto;
+  min-height: 0;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  overflow: auto;
+  max-height: unset;
+  width: 100%;
+  box-sizing: border-box;
 }
 /* Card status border colors */
 .flashcard-outer.completed {
@@ -208,6 +215,8 @@ watch(flipped, () => loadStatus())
   padding-top: 10px;
   border-top: 1px solid #ece4ff;
   background: #fafaff;
+  /* Stick to bottom of card */
+  /* No position: absolute so it stays after content, but always visible */
 }
 .status-btn {
   font-size: 0.97rem;
@@ -243,3 +252,47 @@ watch(flipped, () => loadStatus())
   background: #d6d6f9;
 }
 </style>
+@media (max-width: 500px) {
+  .flashcard-outer {
+    width: 98vw;
+    max-width: 390px;
+    min-width: 0;
+    margin: 11px auto;
+    height: auto;
+    min-height: 260px;
+    border-radius: 11px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.09);
+    padding: 0;
+  }
+  .flashcard-main-content {
+    min-height: 0;
+  }
+  .flashcard-inner,
+  .flashcard-front,
+  .flashcard-back {
+    border-radius: 9px;
+    font-size: 1.08rem;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.09);
+  }
+  .flashcard-content {
+    padding: 14px 8px 8px 8px;
+    font-size: 1.02rem;
+  }
+  .card-status-controls {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.98rem;
+    margin-bottom: 7px;
+    margin-top: 0;
+  }
+  .card-status-controls-below {
+    margin-bottom: 7px;
+    padding-top: 7px;
+  }
+  .status-btn {
+    padding: 4px 8px;
+    font-size: 0.95rem;
+    border-radius: 7px;
+    margin-bottom: 4px;
+  }
+}
