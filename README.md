@@ -1,5 +1,37 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+[
+  {
+    "id": 1,
+    "question": "What is the capital of France?",
+    "answer": "Paris",
+    "folder": "Geography",
+    "topic": "Geography"
+  },
+  {
+    "id": 2,
+    "question": "Which planet is known as the Red Planet?",
+    "answer": "Mars",
+    "folder": "Science",
+    "topic": "Science"
+  },
+  {
+    "id": 3,
+    "question": "What is 2 + 2?",
+    "answer": "4",
+    "folder": "Math",
+    "topic": "Math"
+  },
+  {
+    "id": 4,
+    "question": "What is the boiling point of water?",
+    "answer": "100°C at standard pressure.",
+    "folder": "Science",
+    "topic": "Science"
+  },
+  {
+    "id": 5,
+    "question": "Name the longest river in the world.",
+    "answer": "The Nile.",
+    "folder": "Geography",
+    "topic": "Geography"
+  }
+]

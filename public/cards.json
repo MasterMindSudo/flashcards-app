@@ -1,32 +1,443 @@
 [
   {
     "id": 1,
-    "question": "What is the capital of France?",
-    "answer": "Paris",
-    "topic": "Geography"
+    "question": "Given 10 MBq of ³²P (t½ = 14.2 d), what activity remains after 200 h?",
+    "answer": "About 7.4 MBq (A = 10 MBq × 2^(–8.33 d / 14.2 d)).",
+    "folder": "Biochemistry",
+    "topic": "Radiochemistry"
   },
   {
     "id": 2,
-    "question": "Which planet is known as the Red Planet?",
-    "answer": "Mars",
-    "topic": "Science"
+    "question": "Name two methods used routinely to check radionuclidic purity.",
+    "answer": "High‑resolution gamma spectrometry and half‑life measurement by decay curve analysis.",
+    "folder": "Biochemistry",
+    "topic": "Radiochemistry"
   },
   {
     "id": 3,
-    "question": "What is 2 + 2?",
-    "answer": "4",
-    "topic": "Math"
+    "question": "Define radioactivity, absorbed dose, and effective dose, giving SI units.",
+    "answer": "Radioactivity = becquerel (Bq); absorbed dose = gray (Gy); effective dose = sievert (Sv).",
+    "folder": "Biochemistry",
+    "topic": "Radiochemistry"
   },
   {
     "id": 4,
-    "question": "What is the boiling point of water?",
-    "answer": "100°C at standard pressure.",
-    "topic": "Science"
+    "question": "List three practical ways to reduce a worker’s external radiation dose.",
+    "answer": "Minimise time, maximise distance, use appropriate shielding.",
+    "folder": "Biochemistry",
+    "topic": "Radiochemistry"
   },
   {
     "id": 5,
-    "question": "Name the longest river in the world.",
-    "answer": "The Nile.",
-    "topic": "Geography"
+    "question": "State two kinds of quenching encountered in liquid‑scintillation counting.",
+    "answer": "Chemical quench and optical/colour quench.",
+    "folder": "Biochemistry",
+    "topic": "Radiochemistry"
+  },
+  {
+    "id": 6,
+    "question": "A ⁹⁹Mo/⁹⁹ᵐTc generator has just been eluted: how long until 90 % in‑growth of ⁹⁹ᵐTc?",
+    "answer": "Roughly 18 hours (≈ 3 half‑lives of ⁹⁹ᵐTc).",
+    "folder": "Biochemistry",
+    "topic": "Radiochemistry"
+  },
+  {
+    "id": 7,
+    "question": "Explain why some radiolabelled compounds are stored chilled but not frozen.",
+    "answer": "Cooling slows radiolysis while avoiding freeze‑thaw damage and precipitation.",
+    "folder": "Biochemistry",
+    "topic": "Radiochemistry"
+  },
+  {
+    "id": 8,
+    "question": "Outline a three‑step scheme to purify phosphorylase‑b (97 kDa) from liver.",
+    "answer": "1) 50 % ammonium‑sulfate cut; 2) DEAE anion‑exchange chromatography; 3) Superdex‑200 size‑exclusion chromatography.",
+    "folder": "Biochemistry",
+    "topic": "Protein Purification"
+  },
+  {
+    "id": 9,
+    "question": "On a silica‑gel lipid column (increasing‑polarity solvent), which lipid elutes first and which last among cholesterol, phosphatidyl‑serine, phosphatidyl‑ethanolamine, phosphatidyl‑choline, sphingomyelin?",
+    "answer": "Cholesterol elutes first (least polar); phosphatidyl‑serine elutes last (most polar/charged).",
+    "folder": "Biochemistry",
+    "topic": "Lipids"
+  },
+  {
+    "id": 10,
+    "question": "Give the role of (a) TEMED, (b) ammonium persulfate, (c) acrylamide, (d) bis‑acrylamide in SDS‑PAGE gel casting.",
+    "answer": "TEMED accelerates polymerisation; APS initiates free radicals; acrylamide is the monomer; bis‑acrylamide is the cross‑linker.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 11,
+    "question": "State the purpose of (i) ammonium‑sulfate precipitation, (ii) ultrafiltration, (iii) lyophilisation, (iv) SDS‑PAGE during a protein‑purification workflow.",
+    "answer": "(i) Concentration by salting‑out; (ii) buffer exchange and concentration; (iii) dry‑storage stabilisation; (iv) checking size and purity.",
+    "folder": "Biochemistry",
+    "topic": "Protein Purification"
+  },
+  {
+    "id": 12,
+    "question": "Briefly describe the principle of ion‑exchange, gel‑filtration, affinity, hydrophobic‑interaction and reverse‑phase HPLC chromatography.",
+    "answer": "Ion‑exchange separates by charge; gel‑filtration by size; affinity by specific binding; hydrophobic‑interaction by surface hydrophobicity; reverse‑phase HPLC by hydrophobicity using a non‑polar stationary phase.",
+    "folder": "Biochemistry",
+    "topic": "Protein Purification"
+  },
+  {
+    "id": 13,
+    "question": "Name two electrophoresis types and a typical use for each.",
+    "answer": "SDS‑PAGE for protein sizing; agarose gel electrophoresis for DNA/RNA size separation.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 14,
+    "question": "Why are ammonium persulfate and TEMED added when casting polyacrylamide gels?",
+    "answer": "Together they generate and accelerate free‑radical polymerisation of the gel matrix.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 15,
+    "question": "In gas‑liquid chromatography: (i) which gas is the mobile phase? (ii) How are polar metabolites derivatised? (iii) How is an unknown FAME identified?",
+    "answer": "(i) Helium or nitrogen carrier gas; (ii) convert to TMS derivatives; (iii) match retention time/index against standards.",
+    "folder": "Biochemistry",
+    "topic": "Analytical Chemistry"
+  },
+  {
+    "id": 16,
+    "question": "List the three irreversible glycolysis steps and the bypass enzymes in gluconeogenesis.",
+    "answer": "Hexokinase → glucose‑6‑phosphatase; PFK‑1 → fructose‑1,6‑bisphosphatase; pyruvate kinase → pyruvate carboxylase plus PEP‑carboxykinase.",
+    "folder": "Biochemistry",
+    "topic": "Carbohydrate Metabolism"
+  },
+  {
+    "id": 17,
+    "question": "Give two kinetic differences between hepatic glucokinase and ubiquitous hexokinase.",
+    "answer": "Glucokinase has high Km (~10 mM) and is not inhibited by G‑6‑P; hexokinase has low Km (~0.1 mM) and is inhibited by G‑6‑P.",
+    "folder": "Biochemistry",
+    "topic": "Carbohydrate Metabolism"
+  },
+  {
+    "id": 18,
+    "question": "Define substrate‑level phosphorylation and give one example.",
+    "answer": "Direct ATP (or GTP) production from a high‑energy intermediate, e.g., 1,3‑bisphosphoglycerate → 3‑phosphoglycerate via phosphoglycerate kinase.",
+    "folder": "Biochemistry",
+    "topic": "Metabolism"
+  },
+  {
+    "id": 19,
+    "question": "Contrast active transport with facilitated diffusion.",
+    "answer": "Active transport uses energy to move solutes against a gradient; facilitated diffusion moves solutes down their gradient without energy input.",
+    "folder": "Biochemistry",
+    "topic": "Cell Biology"
+  },
+  {
+    "id": 20,
+    "question": "Describe how glucose metabolism supplies the precursors for fatty‑acid synthesis.",
+    "answer": "Cytosolic citrate provides acetyl‑CoA, and the pentose‑phosphate pathway supplies NADPH for fatty‑acid synthase.",
+    "folder": "Biochemistry",
+    "topic": "Lipid Metabolism"
+  },
+  {
+    "id": 21,
+    "question": "What is the biochemical role of carnitine?",
+    "answer": "It shuttles long‑chain fatty‑acyl groups into mitochondria for β‑oxidation.",
+    "folder": "Biochemistry",
+    "topic": "Lipid Metabolism"
+  },
+  {
+    "id": 22,
+    "question": "Summarise how glucagon raises blood glucose.",
+    "answer": "Glucagon activates cAMP/PKA signalling, promoting glycogen breakdown and gluconeogenesis while inhibiting glycogen synthesis and glycolysis in the liver.",
+    "folder": "Biochemistry",
+    "topic": "Hormone Regulation"
+  },
+  {
+    "id": 23,
+    "question": "Why is the pentose‑phosphate pathway important?",
+    "answer": "It generates NADPH for biosynthesis and ribose‑5‑phosphate for nucleotide synthesis.",
+    "folder": "Biochemistry",
+    "topic": "Carbohydrate Metabolism"
+  },
+  {
+    "id": 24,
+    "question": "State the aerobic fate of pyruvate.",
+    "answer": "Pyruvate is converted to acetyl‑CoA by the PDH complex, enters the TCA cycle, and fuels oxidative phosphorylation.",
+    "folder": "Biochemistry",
+    "topic": "Carbohydrate Metabolism"
+  },
+  {
+    "id": 25,
+    "question": "What is a coupled assay? Give one example.",
+    "answer": "An assay where an undetectable product is converted by a second enzyme into a measurable signal; e.g., hexokinase coupled to G‑6‑PDH monitoring NADPH at 340 nm.",
+    "folder": "Biochemistry",
+    "topic": "Enzyme Assays"
+  },
+  {
+    "id": 26,
+    "question": "How do competitive, non‑competitive and uncompetitive inhibition appear on a Lineweaver‑Burk plot?",
+    "answer": "Competitive: lines intersect on the y‑axis; non‑competitive: lines intersect on the x‑axis; uncompetitive: lines are parallel (both Km and Vmax decrease).",
+    "folder": "Biochemistry",
+    "topic": "Enzyme Regulation"
+  },
+  {
+    "id": 27,
+    "question": "Give one advantage of Hanes or Eadie‑Hofstee plots over Lineweaver‑Burk.",
+    "answer": "They distribute experimental error more evenly, especially at low substrate concentrations.",
+    "folder": "Biochemistry",
+    "topic": "Enzyme Regulation"
+  },
+  {
+    "id": 28,
+    "question": "Name two other ways (besides inhibitors) that enzyme activity is controlled in cells.",
+    "answer": "Covalent modification (e.g., phosphorylation) and allosteric regulation.",
+    "folder": "Biochemistry",
+    "topic": "Enzyme Regulation"
+  },
+  {
+    "id": 29,
+    "question": "Outline one hormone‑signalling pathway from receptor activation to metabolic effect.",
+    "answer": "Glucagon → GPCR (Gs) → adenylyl cyclase → cAMP → PKA → activates glycogen phosphorylase, inhibits glycogen synthase, promotes gluconeogenesis.",
+    "folder": "Biochemistry",
+    "topic": "Hormone Regulation"
+  },
+  {
+    "id": 30,
+    "question": "Explain how lactose regulates the lac operon.",
+    "answer": "Allolactose inactivates the LacI repressor; low glucose increases cAMP, enabling CAP‑cAMP to enhance transcription.",
+    "folder": "Biochemistry",
+    "topic": "Gene Regulation"
+  },
+  {
+    "id": 31,
+    "question": "Describe attenuation control in the bacterial trp operon.",
+    "answer": "High tryptophan allows rapid leader peptide translation, forming a terminator hairpin; low tryptophan stalls the ribosome, allowing transcription to continue.",
+    "folder": "Biochemistry",
+    "topic": "Gene Regulation"
+  },
+  {
+    "id": 32,
+    "question": "What is the role of the ligand in steroid‑hormone action?",
+    "answer": "Ligand binding activates the receptor, releases chaperones, permits nuclear entry and DNA binding to regulate gene expression.",
+    "folder": "Biochemistry",
+    "topic": "Hormone Regulation"
+  },
+  {
+    "id": 33,
+    "question": "Summarise collagen’s structure and biological function.",
+    "answer": "Collagen is a triple helix (Gly‑X‑Y repeats) providing tensile strength in connective tissue.",
+    "folder": "Biochemistry",
+    "topic": "Protein Structure"
+  },
+  {
+    "id": 34,
+    "question": "Differentiate primary, secondary, tertiary and quaternary protein structure.",
+    "answer": "Primary: amino‑acid sequence; secondary: local helices/sheets; tertiary: 3‑D fold of a single chain; quaternary: assembly of multiple subunits.",
+    "folder": "Biochemistry",
+    "topic": "Protein Structure"
+  },
+  {
+    "id": 35,
+    "question": "List two functions of cytochrome P450 enzymes.",
+    "answer": "Detoxification of xenobiotics and metabolism of steroids/fatty acids.",
+    "folder": "Biochemistry",
+    "topic": "Protein Function"
+  },
+  {
+    "id": 36,
+    "question": "What molecular defect causes sickle‑cell anaemia and why does heterozygosity confer malaria protection?",
+    "answer": "A Glu→Val mutation in the β‑globin chain causes HbS polymerisation; heterozygotes hinder Plasmodium growth, offering malaria resistance.",
+    "folder": "Biochemistry",
+    "topic": "Haemoglobin"
+  },
+  {
+    "id": 37,
+    "question": "Give two differences between haemoglobin and myoglobin.",
+    "answer": "Haemoglobin is a tetramer with cooperative O₂ binding; myoglobin is a monomer with higher O₂ affinity and no cooperativity.",
+    "folder": "Biochemistry",
+    "topic": "Haemoglobin"
+  },
+  {
+    "id": 38,
+    "question": "State one key function each for vitamins E and K.",
+    "answer": "Vitamin E is a lipid‑phase antioxidant; vitamin K is required for γ‑carboxylation of clotting factors.",
+    "folder": "Biochemistry",
+    "topic": "Vitamins"
+  },
+  {
+    "id": 39,
+    "question": "Define a co‑enzyme and give two examples; how does this differ from a ribozyme?",
+    "answer": "A co‑enzyme is an organic molecule that assists enzyme action (e.g., NAD⁺, FAD); ribozymes are catalytic RNA molecules, not detachable cofactors.",
+    "folder": "Biochemistry",
+    "topic": "Enzyme Function"
+  },
+  {
+    "id": 40,
+    "question": "Name the octet rule, Heisenberg principle, Schrödinger equation, Henderson‑Hasselbalch equation, Beer–Lambert law and the first law of thermodynamics.",
+    "answer": "Octet rule (8 electrons for stability); Heisenberg uncertainty (Δx·Δp ≥ ħ/2); Schrödinger wave equation; Henderson‑Hasselbalch (pH = pKa + log [A⁻]/[HA]); Beer–Lambert (A = εlc); First law (energy conservation).",
+    "folder": "Biochemistry",
+    "topic": "Basic Science"
+  },
+  {
+    "id": 41,
+    "question": "What distinguishes a free radical from an ordinary molecule, and give one health consequence.",
+    "answer": "Free radicals have unpaired electrons, making them highly reactive; they can cause lipid peroxidation, DNA damage, ageing or cancer.",
+    "folder": "Biochemistry",
+    "topic": "Basic Science"
+  },
+  {
+    "id": 42,
+    "question": "What does the Beer–Lambert law state, and what are its typical units?",
+    "answer": "Absorbance (A) = εlc, where ε is molar absorptivity (L·mol⁻¹·cm⁻¹), l is path length (cm), and c is concentration (mol/L).",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 43,
+    "question": "Why is a blank sample necessary when measuring absorbance?",
+    "answer": "To correct for background absorbance from solvent and cuvette, ensuring only analyte absorbance is measured.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 44,
+    "question": "What is the typical wavelength for protein quantitation using UV absorbance?",
+    "answer": "280 nm, as aromatic amino acids (tryptophan, tyrosine) absorb maximally there.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 45,
+    "question": "What is the principle of the Bradford protein assay?",
+    "answer": "Coomassie Brilliant Blue dye binds proteins, causing a color shift proportional to protein concentration; measured at 595 nm.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 46,
+    "question": "Why are standard curves essential in colorimetric assays?",
+    "answer": "To relate absorbance to concentration, since instrument response may not be perfectly linear.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 47,
+    "question": "What is the purpose of calibration in analytical biochemistry?",
+    "answer": "To establish the relationship between instrument signal and known concentrations, allowing accurate quantification of unknowns.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 48,
+    "question": "Name two factors that can affect the linearity of a standard curve in spectrophotometric assays.",
+    "answer": "High sample absorbance (inner filter effect) and instrument stray light.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 49,
+    "question": "How does SDS-PAGE separate proteins?",
+    "answer": "By molecular weight; SDS denatures proteins and gives them uniform negative charge, so migration depends on size.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 50,
+    "question": "Why is a reducing agent (like β-mercaptoethanol) used in SDS-PAGE?",
+    "answer": "To break disulfide bonds and ensure proteins are fully denatured for accurate size determination.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 51,
+    "question": "What is the principle of gel filtration (size exclusion) chromatography?",
+    "answer": "Molecules are separated by size; larger molecules elute first because they cannot enter the pores of the gel matrix.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 52,
+    "question": "How does ion-exchange chromatography work?",
+    "answer": "Proteins bind to charged resins; elution is achieved by increasing salt concentration or changing pH.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 53,
+    "question": "What is the difference between accuracy and precision?",
+    "answer": "Accuracy is closeness to the true value; precision is reproducibility of repeated measurements.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 54,
+    "question": "Define “limit of detection” (LOD) in analytic biochemistry.",
+    "answer": "The lowest concentration of an analyte that can be reliably distinguished from background noise.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 55,
+    "question": "What is the function of a molecular weight marker in SDS-PAGE?",
+    "answer": "To provide reference protein bands of known size, allowing estimation of unknown protein MW.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 56,
+    "question": "What’s the main purpose of a Western blot after SDS-PAGE?",
+    "answer": "To detect specific proteins using antibody binding after electrophoretic separation.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 57,
+    "question": "What are the three major steps in protein purification?",
+    "answer": "Extraction/solubilization, separation (chromatography, precipitation), and analysis/verification (e.g., SDS-PAGE).",
+    "folder": "Biochemistry",
+    "topic": "Protein Purification"
+  },
+  {
+    "id": 58,
+    "question": "What is isoelectric focusing?",
+    "answer": "A technique where proteins migrate in a pH gradient to their isoelectric point (pI), where net charge is zero.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 59,
+    "question": "How is enzyme activity commonly expressed?",
+    "answer": "In units (U), where 1 U = 1 μmol product formed per minute under defined conditions.",
+    "folder": "Biochemistry",
+    "topic": "Enzyme Assays"
+  },
+  {
+    "id": 60,
+    "question": "What’s the difference between specific activity and total activity?",
+    "answer": "Specific activity is enzyme activity per mg protein; total activity is total units in the sample.",
+    "folder": "Biochemistry",
+    "topic": "Enzyme Assays"
+  },
+  {
+    "id": 61,
+    "question": "Why is protein quantitation important during purification?",
+    "answer": "To monitor yield, efficiency, and enzyme purity at each step.",
+    "folder": "Biochemistry",
+    "topic": "Protein Analysis"
+  },
+  {
+    "id": 62,
+    "question": "What does a positive control do in an assay?",
+    "answer": "Confirms the assay is working by producing the expected result.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
+  },
+  {
+    "id": 63,
+    "question": "What safety precautions are important when handling toxic reagents?",
+    "answer": "Use gloves, goggles, fume hood, and follow disposal guidelines.",
+    "folder": "Biochemistry",
+    "topic": "Analytic Biochem"
   }
 ]
