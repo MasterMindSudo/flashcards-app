@@ -1,5 +1,5 @@
 <template>
-  <div style="text-align: center; margin-top: 36px;">
+  <div style="text-align: center; margin-top: 36px; position: relative;">
     <h1>Flashcards App</h1>
     <!-- Need Revisit Section Button -->
     <div style="margin-bottom: 22px;">
@@ -12,7 +12,7 @@
       <span v-if="needRevisitCount > 0" class="need-revisit-badge">{{ needRevisitCount }}</span>
     </div>
     <!-- Folder selection, Topic selection & Flashcards with transition -->
-    <transition name="fade-slide" mode="out-in">
+    <transition :name="transitionDirection === 'forward' ? 'slide-right' : 'slide-left'" mode="out-in">
       <!-- Need Revisit Mode UI -->
       <div v-if="needRevisitMode" key="need-revisit-root">
         <div v-if="!nrSelectedFolder">
@@ -29,11 +29,19 @@
             </div>
           </div>
           <div style="margin-top: 20px;">
-            <button @click="toggleNeedRevisitMode">← Back to All Cards</button>
+            <button class="back-arrow-btn" @click="transitionDirection = 'backward'; toggleNeedRevisitMode()" aria-label="Back">
+              <svg width="30" height="30" viewBox="0 0 28 28" fill="none" style="display:block">
+                <path d="M19 4L9 14L19 24" stroke="#555" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
         </div>
         <div v-else-if="!nrSelectedTopic">
-          <button @click="nrSelectedFolder = null" style="float: left; margin: 12px;">← Back to Folders</button>
+          <button class="back-arrow-btn" @click="transitionDirection = 'backward'; nrSelectedFolder = null" aria-label="Back">
+            <svg width="30" height="30" viewBox="0 0 28 28" fill="none" style="display:block">
+              <path d="M19 4L9 14L19 24" stroke="#555" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
           <h2>Need Revisit: Select Topic in "{{ nrSelectedFolder }}"</h2>
           <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 28px;">
             <div
@@ -53,7 +61,11 @@
           </div>
         </div>
         <div v-else>
-          <button @click="nrSelectedTopic = null" style="float: left; margin: 12px;">← Back to Topics</button>
+          <button class="back-arrow-btn" @click="transitionDirection = 'backward'; nrSelectedTopic = null" aria-label="Back">
+            <svg width="30" height="30" viewBox="0 0 28 28" fill="none" style="display:block">
+              <path d="M19 4L9 14L19 24" stroke="#555" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
           <h2>Need Revisit: {{ nrSelectedTopic }} <small>({{ nrTopicCards.length }} cards)</small></h2>
           <transition-group name="fade-card" tag="div" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 28px;">
             <Flashcard
@@ -87,7 +99,11 @@
         </div>
       </div>
       <div v-else-if="!selectedTopic" key="topic-list">
-        <button @click="selectedFolder = null" style="float: left; margin: 12px;">← Back to Folders</button>
+        <button class="back-arrow-btn" @click="transitionDirection = 'backward'; selectedFolder = null" aria-label="Back">
+          <svg width="30" height="30" viewBox="0 0 28 28" fill="none" style="display:block">
+            <path d="M19 4L9 14L19 24" stroke="#555" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
         <h2>Select Topic in "{{ selectedFolder }}"</h2>
         <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 28px;">
           <div
@@ -107,7 +123,11 @@
         </div>
       </div>
       <div v-else key="topic-cards">
-        <button @click="selectedTopic = null" style="float: left; margin: 12px;">← Back to Topics</button>
+        <button class="back-arrow-btn" @click="transitionDirection = 'backward'; selectedTopic = null" aria-label="Back">
+          <svg width="30" height="30" viewBox="0 0 28 28" fill="none" style="display:block">
+            <path d="M19 4L9 14L19 24" stroke="#555" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
         <h2>{{ selectedTopic }} <small>({{ topicCards.length }} cards)</small></h2>
         <transition-group name="fade-card" tag="div" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 28px;">
           <Flashcard
@@ -137,6 +157,7 @@ const selectedFolder = ref(null)
 const selectedTopic = ref(null)
 const page = ref(0)
 const pageSize = 10
+const transitionDirection = ref('forward') // 'forward' | 'backward'
 
 // Need Revisit mode state
 const needRevisitMode = ref(false)
@@ -186,11 +207,13 @@ const endIndex = computed(() => startIndex.value + pageSize)
 const currentCards = computed(() => topicCards.value.slice(startIndex.value, endIndex.value))
 
 function selectFolder(folder) {
+  transitionDirection.value = 'forward';
   selectedFolder.value = folder
   selectedTopic.value = null
   page.value = 0
 }
 function selectTopic(topic) {
+  transitionDirection.value = 'forward';
   selectedTopic.value = topic
   page.value = 0
 }
@@ -278,11 +301,13 @@ const nrEndIndex = computed(() => nrStartIndex.value + pageSize)
 const nrCurrentCards = computed(() => nrTopicCards.value.slice(nrStartIndex.value, nrEndIndex.value))
 
 function selectNrFolder(folder) {
+  transitionDirection.value = 'forward';
   nrSelectedFolder.value = folder
   nrSelectedTopic.value = null
   nrPage.value = 0
 }
 function selectNrTopic(topic) {
+  transitionDirection.value = 'forward';
   nrSelectedTopic.value = topic
   nrPage.value = 0
 }
@@ -294,6 +319,11 @@ function nrPrevPage() {
 }
 
 function toggleNeedRevisitMode() {
+  if (!needRevisitMode.value) {
+    transitionDirection.value = 'forward';
+  } else {
+    transitionDirection.value = 'backward';
+  }
   needRevisitMode.value = !needRevisitMode.value
   // Reset navigation state for Need Revisit view
   nrSelectedFolder.value = null
@@ -370,17 +400,18 @@ function countStatus(cardsArr, status) {
   position: relative;
   top: -2px;
 }
-/* Fade-slide animation for folder/topic/card transition */
-.fade-slide-enter-active, .fade-slide-leave-active {
-  transition: all 0.35s cubic-bezier(.77,0,.175,1);
+/* Slide left/right animation for folder/topic/card transition */
+.slide-right-enter-active, .slide-right-leave-active,
+.slide-left-enter-active, .slide-left-leave-active {
+  transition: all 0.45s cubic-bezier(.42,0,.58,1);
 }
-.fade-slide-enter-from {
+.slide-right-enter-from, .slide-left-leave-to {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateX(80vw);
 }
-.fade-slide-leave-to {
+.slide-right-leave-to, .slide-left-enter-from {
   opacity: 0;
-  transform: translateY(-30px);
+  transform: translateX(-80vw);
 }
 .fade-card-enter-active, .fade-card-leave-active {
   transition: all 0.45s cubic-bezier(.42,0,.58,1);
@@ -394,6 +425,29 @@ function countStatus(cardsArr, status) {
   transform: translateY(-40px) scale(0.96);
 }
 </style>
+/* Modern floating back arrow button styles with SVG arrow */
+.back-arrow-btn {
+  position: fixed;
+  left: 14px;
+  top: 12px;
+  z-index: 99999;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  outline: none;
+}
+.back-arrow-btn svg path {
+  stroke: #555;
+  transition: stroke .17s;
+}
+.back-arrow-btn:focus svg path,
+.back-arrow-btn:active svg path,
+.back-arrow-btn:hover svg path {
+  stroke: #6c47ff;
+}
 @media (max-width: 500px) {
   h1 {
     font-size: 1.6rem !important;
@@ -403,12 +457,15 @@ function countStatus(cardsArr, status) {
     margin-top: 6vw !important;
   }
   h2 {
-    font-size: 1.13rem !important;
+    font-size: 1.04rem !important;
     max-width: 97vw;
     text-align: center !important;
     margin-bottom: 13px !important;
     margin-top: 7vw !important;
     line-height: 1.23;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    white-space: normal !important;
   }
   .need-revisit-btn {
     padding: 5px 11px 5px 8px !important;
