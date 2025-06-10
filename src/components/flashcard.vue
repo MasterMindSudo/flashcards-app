@@ -44,18 +44,24 @@
 <script setup>
 import { ref, watch, computed, onMounted } from 'vue'
 import { inject } from 'vue'
+import { cardStatusKey } from '../useCards'
+
 const props = defineProps({
-  card: Object
+  card: {
+    type: Object,
+    required: true,
+    validator: (card) => {
+      return card && typeof card.id !== 'undefined' && 
+             typeof card.question === 'string' && 
+             typeof card.answer === 'string'
+    }
+  }
 })
+
 const flipped = ref(false)
 const status = ref('non_completed')
 // For Need Revisit view refresh
 const notifyStatusChanged = inject('notifyStatusChanged', null)
-
-// Utility: localStorage key
-function cardStatusKey(id) {
-  return `cardStatus-${id}`
-}
 
 // Initialize status from localStorage
 function loadStatus() {
@@ -65,12 +71,25 @@ function loadStatus() {
 }
 
 function persistStatus() {
-  if (props.card?.id) {
+  if (!props.card?.id) return
+  try {
     localStorage.setItem(cardStatusKey(props.card.id), status.value)
+    // Dispatch storage event for other tabs
+    window.dispatchEvent(new StorageEvent('storage', {
+      key: cardStatusKey(props.card.id),
+      newValue: status.value,
+      storageArea: localStorage
+    }))
+  } catch (error) {
+    console.error('Error saving card status:', error)
   }
 }
 
 function setStatus(s) {
+  if (!['completed', 'need_revisit', 'non_completed'].includes(s)) {
+    console.error('Invalid status:', s)
+    return
+  }
   status.value = s
   persistStatus()
   // If notifyStatusChanged is provided (from App.vue), call it to force refresh Need Revisit
